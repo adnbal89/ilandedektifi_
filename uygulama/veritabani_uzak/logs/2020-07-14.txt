@@ -1,0 +1,8 @@
+Time : 07:01:45
+SQLSTATE[HY000] [2002] Operation timed out
+
+Time : 07:01:15
+SQLSTATE[HY000] [2002] Operation timed out
+
+Time : 06:52:56
+SQLSTATE[HY000] [2002] Operation timed out
