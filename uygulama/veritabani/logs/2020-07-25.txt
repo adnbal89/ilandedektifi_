@@ -1,0 +1,20 @@
+Time : 21:36:30
+SQLSTATE[HY000] [1049] Unknown database 'ifsa'
+
+Time : 21:36:27
+SQLSTATE[HY000] [1049] Unknown database 'ifsa'
+
+Time : 21:26:55
+SQLSTATE[HY000] [1049] Unknown database 'ifsa'
+
+Time : 20:36:55
+SQLSTATE[HY000] [2002] Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı.
+
+
+Time : 20:33:06
+SQLSTATE[HY000] [2002] Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı.
+
+
+Time : 20:31:24
+SQLSTATE[HY000] [2002] Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı.
+

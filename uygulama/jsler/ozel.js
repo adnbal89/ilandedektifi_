@@ -1,5 +1,5 @@
 var kacincida = 0;
-var limit = 24;
+var limit = 12;
 function ilan_getir() {
     il = $("#sehir").val();
     $.post(anadizin + "postlar/ilan_getir", { kacincida: kacincida, il: il, limit: limit }, function (data) {

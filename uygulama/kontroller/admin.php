@@ -12,6 +12,11 @@ class Admin extends Kontroller
         $veri = $this->model->admin_ilanlarim();
         $this->goruntu("admin/index", ["veri" => $veri], "giris");
     }
+    public function yukselenler($parametre_bir = "")
+    {
+        $veri = $this->model->admin_ilanlarim();
+        $this->goruntu("admin/yukselenler", ["veri" => $veri], "giris");
+    }
     public function tumu($parametre_bir = "")
     {
         $veri = $this->model->admin_ilanlarim_tumu();

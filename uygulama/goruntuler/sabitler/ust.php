@@ -26,8 +26,8 @@
     <style>
         @media (min-width:650px) {
             .ust_nav {
-                padding-left: 200px;
-                padding-right: 200px;
+                padding-left: 180px;
+                padding-right: 180px;
             }
         }
 
@@ -41,16 +41,19 @@
 
 <body id="content">
     <header>
-        <nav class="navbar navbar-dark fixed-top bg-dark ust_nav">
+        <nav class="navbar navbar-dark bg-dark ust_nav">
             <div>
                 <a href="<?= ANA_DIZIN ?>"><img height="40" src="<?= RESIM ?>sabit/minilogoyeni.png" /></a>
+                <a  class="text-white btn btn-secondary btn-sm" href="<?= ANA_DIZIN ?>yukselenler">Yükselenler</a>
+                <a class="text-white btn btn-secondary btn-sm" href="<?= ANA_DIZIN ?>dusenler">Düşenler</a>
             </div>
+                       
             <div class="d-none d-sm-block">
-                <input style="padding:5px; width:500px;" type="text" id="ilan" placeholder="İlan No ile arama yapabilirsiniz..." />
+                <input style="padding:4px; width:600px;" type="text" id="ilan" placeholder="İlan No ile arama yapabilirsiniz..." />
                 <a class="btn btn-warning" onclick="ozel_ilan_ara(1)"><b>Ara</b></a>
             </div>
             <div>
-                <img href="#ozel_ara" data-toggle="modal" height="30" width="30" src="<?= RESIM ?>sabit/ara2.png" />
+                <img style="padding-right:40px" href="#ozel_ara" data-toggle="modal" height="30" width="70" src="<?= RESIM ?>sabit/ara3.png" />
                 <?php
                 if (FONK::kontrol_id() == 0) {
                 ?>
@@ -76,6 +79,11 @@
                     <a target="_blank" href="http://twitter.com/ilandedektifi">
                         <img height="40" src="<?= RESIM ?>sabit/tw1.png" />
                     </a>
+                </div>
+                
+                <div>
+                <a target="_blank" href="mailto:info@ilandedektifi.com"> <img height="40" src="<?= RESIM ?>sabit/mail.png" />
+                </a>
                 </div>
                 <!--<a class="btn btn-warning" href="<?= ANA_DIZIN ?>"><b>Tüm İlanlar</b></a>-->
                 <a class="btn btn-warning" href="<?= ANA_DIZIN ?>ilan_ekle"><b>İlan Geçmişi Yükle</b></a>

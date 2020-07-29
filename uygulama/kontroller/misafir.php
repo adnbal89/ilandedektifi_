@@ -12,6 +12,16 @@ class Misafir extends Kontroller
         $sehir = $this->model->sehir();
         $this->goruntu("misafir/ilk", ["sehir" => $sehir], "giris");
     }
+    public function yukselenler($parametre_bir = "")
+    {
+        $sehir = $this->model->sehir();
+        $this->goruntu("misafir/yukselenler", ["sehir" => $sehir], "giris");
+    }
+    public function dusenler($parametre_bir = "")
+    {
+        $sehir = $this->model->sehir();
+        $this->goruntu("misafir/dusenler", ["sehir" => $sehir], "giris");
+    }
     public function incele($parametre_bir = "", $parametre_iki = "")
     {
         $this->model->incele($parametre_bir, $parametre_iki);

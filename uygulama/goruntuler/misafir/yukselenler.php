@@ -20,7 +20,7 @@
                             echo '<option value="' . $value["sehir_key"] . '">' . $value["sehir_title"] . '</option>';
                         } ?>
                     </select>
-                    <a class="btn btn-warning" style=" position:absolute;" onclick="ilan_getir_yeni()"><b>Getir</b></a>
+                    <a class="btn btn-warning" style=" position:absolute;" onclick="ilan_getir_yeni()"><b>Getir-YUKSELENLER</b></a>
                 </div>
             </div>
             <div class="col-xl-12 col-12" style="margin-bottom:60px;">

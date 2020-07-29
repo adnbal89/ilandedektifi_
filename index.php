@@ -1,6 +1,6 @@
 <?php
 session_start();
-$isim = "http://localhost";
+$isim = "http://localhost:8080";
 $on_ek = "ifsa/";
 
 define("ANA_DIZIN", "$isim/" . $on_ek);

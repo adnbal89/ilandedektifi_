@@ -18,7 +18,7 @@ class Misafirpostmodel
         $il = FONK::il_isim($il);
         $kategori = "satilik-daire";
         //ORDER BY RAND() 
-        $cek = $this->db_uzak->query("Select DISTINCT ii.IlanNo , ii.createDate,ii.Fiyat,ii.Baslik from ilan ii ,gecmis g  where  ii.IlanNo = g.IlanNo and ii.Il=:il and ii.Kategori=:kategori  limit $limit offset $kacinci", ["kategori" => $kategori, "il" => $il]);
+        $cek = $this->db_uzak->query("Select DISTINCT ii.IlanNo, ii.createDate,ii.Fiyat,ii.Baslik from ilan ii  where ii.Il=:il and ii.Kategori=:kategori and ii.Updated = 1 limit $limit offset $kacinci ", ["kategori" => $kategori, "il" => $il]);
         if (!empty($cek)) {
             foreach ($cek as  $value) {
                 $cek_tpl_r[0] = FONK::sayi_yap($value["Fiyat"]);
@@ -38,6 +38,37 @@ class Misafirpostmodel
         }
         require_once 'uygulama/goruntuler/misafir/tek_tablo_getir.php';
     }
+
+    public function  ilan_getir_yukselenler()
+    {
+        $kacinci = $_POST["kacincida"];
+        $limit = $_POST["limit"];
+        $il = $_POST["il"];
+        $fonk_topla = [];
+        $il = FONK::il_isim($il);
+        $kategori = "satilik-daire";
+        //ORDER BY RAND() 
+        $cek = $this->db_uzak->query("Select DISTINCT ii.IlanNo, ii.createDate,ii.Fiyat,ii.Baslik from ilan ii ,gecmis g  where  ii.IlanNo = g.IlanNo and ii.Il=:il and ii.Kategori=:kategori limit $limit offset $kacinci ", ["kategori" => $kategori, "il" => $il]);
+        if (!empty($cek)) {
+            foreach ($cek as  $value) {
+                $cek_tpl_r[0] = FONK::sayi_yap($value["Fiyat"]);
+                $cek_tpl_r[1] = FONK::sayi_yap($value["Fiyat"]);
+                $cek_tpl = [];
+                $cek_tpl[] = [FONK::tarih("bas", strtotime(FONK::tarih("donustur", $value["createDate"]))), FONK::sayi_yap($value["Fiyat"]), $value["Baslik"]];
+                $parametre_iki = $value["IlanNo"];
+                $cek = $this->db_uzak->query("Select Tarih,Fiyat from gecmis where IlanNo = :ilanno", ["ilanno" => $parametre_iki]);
+                if (!empty($cek)) {
+                    foreach ($cek as  $value) {
+                        $cek_tpl[] = [FONK::tarih("bas", strtotime(FONK::tarih("donustur", $value["Tarih"]))), FONK::sayi_yap($value["Fiyat"])];
+                    }
+                    $cek_tpl_r[1] = FONK::sayi_yap($value["Fiyat"]);
+                }
+                $fonk_topla[] = [$parametre_iki, $cek_tpl, $cek_tpl_r];
+            }
+        }
+        require_once 'uygulama/goruntuler/misafir/tek_tablo_getir.php';
+    }
+
     public function  ilan_getir()
     {
         $kacinci = $_POST["kacincida"];

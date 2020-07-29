@@ -17,6 +17,13 @@ class Misafirmodel
         print_r($deger);
         echo "Modelin indexi geldi<br>";
     }
+    public function yukselenler($parametre_bir = "")
+    {
+        $deger = $this->db->query("Select mail,sifre,yetki from kontrol where yetki = :yetki", ["yetki" => $parametre_bir]);
+        echo "<pre>";
+        print_r($deger);
+        echo "Modelin indexi geldi<br>";
+    }
     public function sehir($id = "*")
     {
         if ($id == "*") {

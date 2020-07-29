@@ -1,0 +1,3 @@
+Time : 15:52:55
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY RAND()' at line 1
+Raw SQL : Select DISTINCT ii.IlanNo, ii.createDate,ii.Fiyat,ii.Baslik from ilan ii ,gecmis g  where  ii.IlanNo = g.IlanNo and ii.Il=:il and ii.Kategori=:kategori  limit 24 offset 0 ORDER BY RAND()
